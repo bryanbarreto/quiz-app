@@ -23,7 +23,7 @@
                                 <color key="progressTintColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="trackTintColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4V-Z2-JrX">
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z4V-Z2-JrX">
                                 <rect key="frame" x="16" y="535" width="343" height="30"/>
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -57,30 +57,42 @@
                                     <action selector="btnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yHn-Lb-zA8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2m-lV-0ej">
-                                <rect key="frame" x="16" y="20" width="343" height="456.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="twv-gX-71n">
+                                <rect key="frame" x="-4" y="0.0" width="383" height="497"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z2m-lV-0ej">
+                                        <rect key="frame" x="20" y="92" width="343" height="385"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3ww-kW-lgP">
+                                        <rect key="frame" x="20" y="8" width="343" height="76"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="NHs-od-9W8" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="2jA-yl-HD3"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NHs-od-9W8" secondAttribute="bottom" constant="21" id="6dc-0J-n2s"/>
+                            <constraint firstItem="twv-gX-71n" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="-4" id="ImJ-GQ-Haf"/>
+                            <constraint firstItem="twv-gX-71n" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Jf0-a9-9qM"/>
                             <constraint firstItem="4Ft-8A-KhR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Kou-I5-6oW"/>
-                            <constraint firstItem="z2m-lV-0ej" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="PaS-E8-76h"/>
                             <constraint firstItem="Z4V-Z2-JrX" firstAttribute="leading" secondItem="4Ft-8A-KhR" secondAttribute="leading" id="Rji-1Q-xy4"/>
-                            <constraint firstItem="Z4V-Z2-JrX" firstAttribute="top" secondItem="z2m-lV-0ej" secondAttribute="bottom" constant="58.5" id="U5X-3D-sIa"/>
-                            <constraint firstItem="z2m-lV-0ej" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="Uxi-kK-IPu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bAl-LC-6cC" secondAttribute="trailing" constant="16" id="XkN-dF-lsT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4Ft-8A-KhR" secondAttribute="trailing" constant="16" id="b7e-q4-Hcq"/>
                             <constraint firstItem="NHs-od-9W8" firstAttribute="top" secondItem="bAl-LC-6cC" secondAttribute="bottom" constant="24.5" id="cHM-Gc-AXf"/>
                             <constraint firstItem="bAl-LC-6cC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eac-EQ-97b"/>
                             <constraint firstItem="bAl-LC-6cC" firstAttribute="top" secondItem="4Ft-8A-KhR" secondAttribute="bottom" constant="20" id="i4B-jt-QF2"/>
-                            <constraint firstItem="4Ft-8A-KhR" firstAttribute="top" secondItem="z2m-lV-0ej" secondAttribute="bottom" constant="8" id="jcV-w4-ZpR"/>
                             <constraint firstItem="Z4V-Z2-JrX" firstAttribute="trailing" secondItem="4Ft-8A-KhR" secondAttribute="trailing" id="o4I-Wx-lVg"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="z2m-lV-0ej" secondAttribute="trailing" constant="16" id="v1y-m6-oco"/>
+                            <constraint firstItem="Z4V-Z2-JrX" firstAttribute="top" secondItem="twv-gX-71n" secondAttribute="bottom" constant="38" id="ogA-4N-LVb"/>
+                            <constraint firstAttribute="trailing" secondItem="twv-gX-71n" secondAttribute="trailing" constant="-4" id="qii-eG-SGG"/>
                             <constraint firstItem="NHs-od-9W8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="xW3-Mb-V4E"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -89,6 +101,7 @@
                         <outlet property="falseButton" destination="bAl-LC-6cC" id="5DS-4Y-MyY"/>
                         <outlet property="progressBar" destination="NHs-od-9W8" id="xeL-ms-qzd"/>
                         <outlet property="questionLabel" destination="z2m-lV-0ej" id="PIM-uP-5xe"/>
+                        <outlet property="scoreLabel" destination="3ww-kW-lgP" id="cL2-I3-7GN"/>
                         <outlet property="trueButton" destination="4Ft-8A-KhR" id="fFF-eS-Tjf"/>
                     </connections>
                 </viewController>

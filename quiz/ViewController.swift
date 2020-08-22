@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var progressBar: UIProgressView!
     @IBOutlet weak var trueButton: UIButton!
     @IBOutlet weak var falseButton: UIButton!
+    @IBOutlet weak var scoreLabel: UILabel!
     
     var questionNumber:Int = 0
     var correctAnswers:Int = 0
@@ -32,14 +33,25 @@ class ViewController: UIViewController {
     
     @IBAction func btnPressed(_ sender: UIButton) {
         
-        let questionAnswer = questions[questionNumber].answer
-        let userAnswer = sender.currentTitle!
-        checkAnswer(questionAnswer: questionAnswer, userAnswer: userAnswer, button: sender)
+        if(sender.currentTitle != "Recomecar"){
         
-        /* delay de 0.2 segundo para resetar a cor dos botoes */
-        Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(resetButtons),userInfo: nil, repeats: false)
-        
-        nextQuestion()
+            let questionAnswer = questions[questionNumber].answer
+            let userAnswer = sender.currentTitle!
+            checkAnswer(questionAnswer: questionAnswer, userAnswer: userAnswer, button: sender)
+            
+            /* delay de 0.2 segundo para resetar a cor dos botoes */
+            Timer.scheduledTimer(timeInterval:0.2, target: self, selector: #selector(resetButtons),userInfo: nil, repeats: false)
+            
+            nextQuestion()
+            
+        }else{
+            questionNumber = 0
+            correctAnswers = 0
+            trueButton.setTitle("Verdadeiro", for: .normal)
+            falseButton.isEnabled = true
+            falseButton.isHidden = false
+            updateUI()
+        }
     }
     
     func updateUI()->Void{
@@ -55,6 +67,8 @@ class ViewController: UIViewController {
             
             correctAnswers += 1
             
+            scoreLabel.text = "Pontuação: \(correctAnswers)"
+            
         }else{
             
             // usuario errou a questao
@@ -69,7 +83,8 @@ class ViewController: UIViewController {
         if(questionNumber+1 == questions.count){
             
             progressBar.setProgress(1, animated: true)
-            questionLabel.text = "Fim de Jogo! Você acertou \(correctAnswers) questões"
+            
+            fimDeJogo()
             
         }else{
             questionNumber+=1
@@ -92,6 +107,13 @@ class ViewController: UIViewController {
         let n2:Float = Float(questions.count)
         
         progressBar.setProgress(n1/n2, animated: true)
+    }
+    
+    func fimDeJogo(){
+        questionLabel.text = "Fim de Jogo! Você acertou \(correctAnswers) questões"
+        falseButton.isEnabled = false
+        falseButton.isHidden = true
+        trueButton.setTitle("Recomecar", for: .normal)
     }
 
 }
